@@ -1,0 +1,63 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Blog0440</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/inspired-apple-vinodh.png">
+    <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img class="img img-responsive logoImg" src="img/inspired-apple-vinodh.png" alt="Peach Logo">
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">Blog Home</a>
+                    </li>
+                    {% if True %}
+                    <li><a href="loginRegister.html">Sign In/Register</a>
+                    </li>
+                    {% else %}
+                    <li><a href="createEditPost.html">Create Post</a>
+                    </li>
+                    <li class="active"><a href="#">Vinodh Thiagarajan</a>
+                    </li>
+                    <li><a href="loginRegister.html">Logout</a> </li>
+                    {% endif %}
+                </ul>
+
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+    </nav>
+    {% block content %} {% endblock %}
+    <hr>
+    <footer>
+        <div class="text-center">
+            <p>&copy; Vinodh Thiagarajan</p>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

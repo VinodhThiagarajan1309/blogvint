@@ -1,0 +1,71 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+body{
+	background-image: url("../img/pattern.jpg");
+	font-family: "Lucida Console", Monaco, monospace;
+	padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+label.error{
+	color: red;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #5bc0de;
+}
+
+
+.logoImg{
+	width: 8%;
+	height: 8%;
+}
+
+.main-container{
+	padding-top: 60px;
+}
+
+.blogArtStyle{
+	background: #fcf8e3;
+    padding: 10px;
+    border-radius: 5px;
+}
+.blogItemHR{
+	border-top: 1px solid #c79042;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.commentArtStyle{
+	background: hsla(73, 44%, 46%, 0.37);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.postcommentArtStyle{
+	padding: 20px;
+}
+
+h5{
+	display:inline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

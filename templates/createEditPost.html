@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <!-- main-container -->
+<div class="container main-container">
+<div class="row">
+   <div class="col-md-offset-1 col-md-10">
+      <article class="blogArtStyle">
+         <form>
+            <div class="form-group">
+               <label for="title">Post Title</label>
+               <input type="text" class="form-control" id="title" placeholder="Blog Title">
+            </div>
+            <div class="form-group">
+               <label for="content">Content</label>
+               <textarea class="form-control" rows="15" id="comment"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Post to Blog</button>
+            <button type="submit" class="btn btn-default" href="index.html"><i class="fa fa-ban" aria-hidden="true"></i></i> Cancel</button>
+         </form>
+      </article>
+   </div>
+   <!-- row -->
+</div>
+<!-- main-container -->
+
+{% endblock %}
