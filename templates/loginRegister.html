@@ -12,6 +12,10 @@
                             <div class="col-md-offset-3 col-md-6 well well-lg">
                                 <form id="loginForm" method="post" action="/login">
                                     <h4>Blog0440 - Sign in</h4>
+                                    {% if invalidLogin %}
+                                     <label id="inputUserId-error" class="error" for="inputUserId">Invalid Credentials. Please try again.</label>
+
+                                    {% endif %}
                                     <label for="inputUserId" class="sr-only">User Id</label>
                                     <input type="text" id="inputUserId" name="inputUserId" class="form-control" placeholder="User Id">
                                     <label for="inputPassword" class="sr-only">Password</label>
@@ -30,13 +34,18 @@
                                 <form id="registrationForm" method="post" action="/register">
                                     <h3>New User ? - Register</h3>
                                     <label for="firstName" class="sr-only">First Name</label>
-                                    <input type="text" id="firstName" name="firstName" class="form-control" placeholder="First Name">
+                                    <input type="text" id="firstName" name="firstName" class="form-control" placeholder="First Name" value="{{firstName}}">
 
                                     <label for="lastName" class="sr-only">Last Name</label>
-                                    <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Last Name">
+                                    <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Last Name" value="{{lastName}}">
 
                                     <label for="userId" class="sr-only">User Id</label>
                                     <input type="text" id="userId" name="userId" class="form-control" placeholder="User Id">
+                                    {% if userAlreadyExists %}
+
+                                        <label id="userId-error" class="error" for="userId">User Id "{{userId}}" already exists.Please try with another user name.</label>
+
+                                    {% endif %}
 
                                     <label for="password" class="sr-only">Password</label>
                                     <input type="password" id="password" name="password" class="form-control" placeholder="Password">
@@ -45,7 +54,7 @@
                                     <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Confirm Password">
 
                                     <label for="email" class="sr-only">Email Optinal</label>
-                                    <input type="email" id="email" name="email" class="form-control" placeholder="Email Id (Optional)">
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="Email Id (Optional)" value="{{email}}">
                                     <br>
                                     <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
                                 </form>

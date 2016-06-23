@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from handlers.login_register_handler import *
+from handlers_models.blog_handlers_models import *
 
 #This is the place where all of your URL mapping goes
 route_list = [
@@ -10,5 +10,6 @@ route_list = [
 	('/register',RegisterHandler),
 	('/login',LoginHandler),
 	('/viewpost',ViewPostHandler),
-	('/createpost',CreatePostHandler)
+	('/createpost',CreatePostHandler),
+	('/home',MainHandler)
 	]

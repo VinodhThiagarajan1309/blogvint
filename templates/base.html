@@ -31,13 +31,13 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/">Blog Home</a>
                     </li>
-                    {% if True %}
+                    {% if role == "guest" %}
                     <li><a href="loginRegister.html">Sign In/Register</a>
                     </li>
-                    {% else %}
+                    {% elif role == "member" %}
                     <li><a href="createEditPost.html">Create Post</a>
                     </li>
-                    <li class="active"><a href="#">Vinodh Thiagarajan</a>
+                    <li class="active"><a href="#">{{memberName}}</a>
                     </li>
                     <li><a href="loginRegister.html">Logout</a> </li>
                     {% endif %}
