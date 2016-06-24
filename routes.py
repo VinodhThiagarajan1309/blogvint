@@ -9,7 +9,8 @@ route_list = [
 	('/blogauth',AuthRouteHandler),
 	('/register',RegisterHandler),
 	('/login',LoginHandler),
-	('/viewpost',ViewPostHandler),
+	(r'/viewpost/(\d+)',ViewPostHandler),
 	('/createpost',CreatePostHandler),
+	(r'/editpost/(\d+)',EditPostHandler),
 	('/home',MainHandler)
 	]

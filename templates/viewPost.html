@@ -2,25 +2,26 @@
 
 {% block content %}
 <!-- main-container -->
+{% if post %}
 <div class="container main-container">
    <div class="row">
       <div class="col-md-offset-1 col-md-10">
          <article class="blogArtStyle">
             <div class="row">
                <div class="col-xs-6">
-                  <h4 >Title goes here</h4>
+                  <h4 >{{post.title}}</h4>
                </div>
                <div class="col-xs-6">
                   <div class="pull-right">
                      <a href="#" class="btn btn-sm btn-success"  data-toggle="tooltip" data-placement="bottom" title="Like Post"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>  <span class="badge">42</span></a>
-                     <a href="#" class="btn btn-sm btn-warning" data-toggle="tooltip" data-placement="bottom" title="Edit Post"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                     <a href="/editpost/{{post.key().id()}}" class="btn btn-sm btn-warning" data-toggle="tooltip" data-placement="bottom" title="Edit Post"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                      <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#myModal" data-toggle="tooltip" data-placement="bottom" title="Delete Post" ><i class="fa fa-trash" aria-hidden="true"></i> </a>
                   </div>
                </div>
             </div>
             <div class="row">
                <div class="col-xs-6">
-                  <h6 class="text-muted"><i class="fa fa-user" aria-hidden="true"></i> Vinodh Thiagarajan</h6>
+                  <h6 class="text-muted"><i class="fa fa-user" aria-hidden="true"></i> {{post.user.firstname}}  {{post.user.lastname}}</h6>
                </div>
                <div class="col-xs-6">
                   <div class="pull-right">
@@ -30,57 +31,21 @@
             </div>
             <hr class="blogItemHR">
             <br>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-               consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-               cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-               proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-            </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-               consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-               cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-               proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-            </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-               consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-               cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-               proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-            </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-               consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-               cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-               proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-            </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-               consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-               cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-               proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-            </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-               consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-               cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-               proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-            </p>
+            <p>{{post.content}}</p>
             <br>
          </article>
+         </div>
+         </div>
          <br>
          <br>
          <br>
+         
+
+         <div class="row">
+         <div class="col-md-offset-1 col-md-10">
          <h5>Comments</h5>
          <hr class="blogItemHR">
          <br>
-
          {% for i in range(0,5) %}
          <article class="commentArtStyle">
             <div class="row">
@@ -126,6 +91,22 @@
    <!-- row -->
 </div>
 <!-- main-container -->
+{% else %}
+<div class="container main-container">
+   <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+         <article class="blogArtStyle">
+            <div class="row">
+               <div class="col-xs-6" >
+                  <h5><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> No such post exists.</h5>
+               </div>
+            </div>
+         </article>
+      </div>
+   </div>
+</div>   
+
+{% endif %}
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
    <div class="modal-dialog">
       <div class="modal-content">

@@ -115,6 +115,28 @@ $().ready(function() {
 
     });
 
+    $("#createEditPostForm").validate({
+        rules: {
+            title: {
+                required: true
+            },
+
+            content: {
+                required: true
+            }
+        },
+        messages: {
+            title: {
+                required: "Please enter the title of the post."
+            },
+            content: {
+                required: "Please provide the content for this post."
+            }
+
+        }
+
+    });
+
 
 });
 

@@ -2,24 +2,20 @@
 
 {% block content %}
       <!-- main-container -->
-      {% for i in range(0,5) %}
+      {% for post in listAllPosts %}
       <div class="container main-container">
          <div class="row">
             <div class="col-md-offset-2 col-md-8">
                <article class="blogArtStyle">
-                  <h4>Title goes here</h4>
+                  <h4>{{post.title}}</h4>
                   <hr class="blogItemHR">
                   <br>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                     proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                  <p>
+                  {{post.content}}
                   </p>
                   <br>
-                  <a href="/viewpost" class="btn btn-success">View Post <span class="badge">42</span></a>
-                  <h6 class="text-muted"><i class="fa fa-user" aria-hidden="true"></i> Vinodh Thiagarajan</h6>
+                  <a href="/viewpost/{{post.key().id()}}" class="btn btn-success">View Post <span class="badge">42</span></a>
+                  <h6 class="text-muted"><i class="fa fa-user" aria-hidden="true"></i> {{post.user.firstname}}  {{post.user.lastname}}</h6>
                   <h6 class="text-muted"><i class="fa fa-calendar" aria-hidden="true"></i> 06-20-2016</h6>
                </article>
             </div><!-- col-md-8 -->

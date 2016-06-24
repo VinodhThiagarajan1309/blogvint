@@ -7,12 +7,12 @@
     <title>Blog0440</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="img/inspired-apple-vinodh.png">
+    <link rel="icon" href="../img/inspired-apple-vinodh.png">
     <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 
 <body>
@@ -25,17 +25,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img class="img img-responsive logoImg" src="img/inspired-apple-vinodh.png" alt="Peach Logo">
+                <img class="img img-responsive logoImg" src="../img/inspired-apple-vinodh.png" alt="Peach Logo">
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/">Blog Home</a>
                     </li>
                     {% if role == "guest" %}
-                    <li><a href="loginRegister.html">Sign In/Register</a>
+                    <li><a href="/blogauth">Sign In/Register</a>
                     </li>
                     {% elif role == "member" %}
-                    <li><a href="createEditPost.html">Create Post</a>
+                    <li><a href="/createpost">Create Post</a>
                     </li>
                     <li class="active"><a href="#">{{memberName}}</a>
                     </li>
@@ -55,9 +55,9 @@
         </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/jquery.validate.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/vendor/bootstrap.min.js"></script>
+    <script src="../js/jquery.validate.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
