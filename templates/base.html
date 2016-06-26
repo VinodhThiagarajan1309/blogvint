@@ -34,12 +34,12 @@
                     {% if role == "guest" %}
                     <li><a href="/blogauth">Sign In/Register</a>
                     </li>
-                    {% elif role == "member" %}
+                    {% elif member %}
                     <li><a href="/createpost">Create Post</a>
                     </li>
-                    <li class="active"><a href="#">{{memberName}}</a>
+                    <li class="active"><a href="#">{{member.firstname}} {{member.lastname}}</a>
                     </li>
-                    <li><a href="loginRegister.html">Logout</a> </li>
+                    <li><a href="/logout">Logout</a> </li>
                     {% endif %}
                 </ul>
 

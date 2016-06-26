@@ -6,14 +6,26 @@
 <div class="row">
    <div class="col-md-offset-1 col-md-10">
       <article class="blogArtStyle">
+      {% if post %}
+         <form id="createEditPostForm" method="post" action="/editpost/{{post.key().id()}}">
+      {% else %}
          <form id="createEditPostForm" method="post" action="/createpost">
+      {% endif%}
             <div class="form-group">
                <label for="title">Post Title</label>
-               <input type="text" class="form-control" id="title" name="title" placeholder="Blog Title" value={{post.title}}>
+               {% if post %}
+               <input type="text" class="form-control" id="title" name="title" placeholder="Blog Title" value="{{post.title}}">
+                {% else %}
+                <input type="text" class="form-control" id="title" name="title" placeholder="Blog Title">
+                 {% endif %}
             </div>
             <div class="form-group">
                <label for="content">Content</label>
+               {% if post %}
                <textarea class="form-control" rows="15" id="comment" name="content">{{post.content}}</textarea>
+               {% else %}
+               <textarea class="form-control" rows="15" id="comment" name="content"></textarea>
+               {% endif %}
             </div>
             {% if post %}
             <button type="submit" class="btn btn-success"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Update Post</button>

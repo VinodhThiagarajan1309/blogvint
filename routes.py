@@ -12,5 +12,10 @@ route_list = [
 	(r'/viewpost/(\d+)',ViewPostHandler),
 	('/createpost',CreatePostHandler),
 	(r'/editpost/(\d+)',EditPostHandler),
-	('/home',MainHandler)
+	('/home',MainHandler),
+	('/postcomment',PostCommentHandler),
+	('/logout',LogoutHandler),
+	('/deletecomment',DeleteCommentHandler),
+	('/deletepost',DeletePostHandler),
+	('/likepost',LikePostHandler)
 	]

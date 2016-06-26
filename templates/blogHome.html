@@ -14,9 +14,9 @@
                   {{post.content}}
                   </p>
                   <br>
-                  <a href="/viewpost/{{post.key().id()}}" class="btn btn-success">View Post <span class="badge">42</span></a>
+                  <a href="/viewpost/{{post.key().id()}}" class="btn btn-success">View Post</a>
                   <h6 class="text-muted"><i class="fa fa-user" aria-hidden="true"></i> {{post.user.firstname}}  {{post.user.lastname}}</h6>
-                  <h6 class="text-muted"><i class="fa fa-calendar" aria-hidden="true"></i> 06-20-2016</h6>
+                  <h6 class="text-muted"><i class="fa fa-calendar" aria-hidden="true"></i> {{post.updatedOn.strftime('%Y-%m-%d')}}</h6>
                </article>
             </div><!-- col-md-8 -->
          </div> <!-- row -->
