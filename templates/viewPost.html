@@ -163,7 +163,7 @@
          <form id="deleteComment" method="post" action="/deletecomment">
          {% if post %}
          <input type="hidden" name="commentPostId" value="{{post.key().id()}}">
-         <input type="hidden" name="commentId" id="commentId">
+         <input type="hidden" name="commentId" id="deletecommentId">
          {% endif %}
          <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -193,7 +193,7 @@
          <form id="postCommentForm" method="post" action="/postcomment">
             {% if post %}
             <input type="hidden" name="commentPostId" value="{{post.key().id()}}">
-            <input type="hidden" name="commentId" id="commentId">
+            <input type="hidden" name="commentId" id="editcommentId">
             {% endif %}
             <div class="modal-body">
                <div class="form-group">

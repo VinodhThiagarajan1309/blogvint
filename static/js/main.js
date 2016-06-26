@@ -161,12 +161,12 @@ $().ready(function() {
         $('#comment').text(currComment);
         $('#postCommentModalTitle').text("Update Comment");
         $('#postCommentButtonName').text("Update");
-        $('#commentId').val(elementId);
+        $('#editcommentId').val(elementId);
     });
 
     $('.deleteComment').click(function(){
         var elementId = this.id;
-        $('#commentId').val(elementId);
+        $('#deletecommentId').val(elementId);
     });
 
     if($('.viewpostDiv').length > 0){
@@ -203,11 +203,11 @@ $().ready(function() {
 
 //Custom Validations as per Blog0440 application
 $.validator.addMethod("alphanumeric", function(value, element) {
-    return this.optional(element) || (/^\w+$/i.test(value));
-}, "Letters, numbers, and underscores only please");
+    return this.optional(element) || (/^[a-z0-9_]+$/.test(value));
+}, "Lowercase Letters, numbers, and underscores only please");
 
 $.validator.addMethod("lettersonly", function(value, element) {
-    return this.optional(element) || (/^[a-z]+$/i.test(value));
+    return this.optional(element) || (/^[a-zA-Z]+$/.test(value));
 }, "Letters only please");
 
 $.validator.addMethod("cannotbeempty", function(value, element) {

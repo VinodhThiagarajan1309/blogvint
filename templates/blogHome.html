@@ -2,6 +2,7 @@
 
 {% block content %}
       <!-- main-container -->
+      {% if listAllPosts.count() > 0 %}
       {% for post in listAllPosts %}
       <div class="container main-container">
          <div class="row">
@@ -11,7 +12,7 @@
                   <hr class="blogItemHR">
                   <br>
                   <p>
-                  {{post.content}}
+                  {{post.content|truncate(200, True , end = '...')}}
                   </p>
                   <br>
                   <a href="/viewpost/{{post.key().id()}}" class="btn btn-success">View Post</a>
@@ -20,7 +21,26 @@
                </article>
             </div><!-- col-md-8 -->
          </div> <!-- row -->
-      </div> <!-- main-container -->
+      </div> <!-- main-container --> 
    {% endfor %}
+   {% else %}
+   <div class="container main-container">
+         <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+               <article class="blogArtStyle">
+                  <h4>No posts yet</h4>
+                  <hr class="blogItemHR">
+                  <br>
+                  <p>
+                     Login and create the first post for Blog 0440.
+                  </p>
+                  <br>
+                  <a class="btn btn-success" href="/createpost">Create Post</a>
+               </article>
+            </div><!-- col-md-8 -->
+         </div> <!-- row -->
+      </div> <!-- main-container --> 
+   {% endif %}
+     
 
 {% endblock %}

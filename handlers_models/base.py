@@ -8,15 +8,18 @@ import hmac
 import random
 import string
 
-template_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'templates')
-jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=True)
+template_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)),
+                            'templates')
+jinja_env = jinja2.Environment(
+                loader=jinja2.FileSystemLoader(template_dir), autoescape=True)
+
+"""BaseHandler which will be inherited all other handlers
+    it will implement the most common functionality
+    required by all handlers
+    """
 
 
 class BaseHandler(webapp2.RequestHandler):
-    """BaseHandler which will be inherited all other handlers
-    it should implement the most common functionality
-    required by all handlers
-    """
 
     def __init__(self, request, response):
         self.initialize(request, response)
