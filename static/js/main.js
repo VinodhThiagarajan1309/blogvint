@@ -174,7 +174,7 @@ $(document).ready(function() {
             event.preventDefault();
         }
         // If user already liked it
-        if (hasLikedPostAlready !== "0") {
+        if (hasLikedPostAlready !== "0" && hasLikedPostAlready !== 'None') {
             $("#likeErrors").fadeIn(1000);
             $("#likeErrors").text("You have 'LIKED' this post already.");
             $("#likeErrors").css("display", "block");
