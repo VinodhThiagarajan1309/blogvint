@@ -7,6 +7,7 @@
     <title>Blog0440</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Logo and style sheets -->
     <link rel="icon" href="../img/inspired-apple-vinodh.png">
     <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -31,9 +32,11 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/">Blog Home</a>
                     </li>
+                    <!-- If the role is Guest -->
                     {% if role == "guest" %}
                     <li><a href="/blogauth">Sign In/Register</a>
                     </li>
+                    <!-- If Logged in user -->
                     {% elif member %}
                     <li><a href="/createpost">Create Post</a>
                     </li>
@@ -48,12 +51,14 @@
         </div>
     </nav>
     {% block content %} {% endblock %}
+    <!-- Footer -->
     <hr>
     <footer>
         <div class="text-center">
             <p>&copy; Vinodh Thiagarajan</p>
         </div>
     </footer>
+    <!-- Loading the JS files as a last part of the body -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="../js/vendor/bootstrap.min.js"></script>
     <script src="../js/jquery.validate.js"></script>

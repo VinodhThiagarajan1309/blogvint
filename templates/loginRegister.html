@@ -28,7 +28,6 @@
                     </div>
 
                     <div class="col-md-6">
-
                         <div class="row">
                             <div class="col-md-offset-2 col-md-8 well well-lg">
                                 <form id="registrationForm" method="post" action="/register">
@@ -41,6 +40,7 @@
 
                                     <label for="userId" class="sr-only">User Id</label>
                                     <input type="text" id="userId" name="userId" class="form-control" placeholder="User Id">
+                                    <!-- If User Id already exists -->
                                     {% if userAlreadyExists %}
 
                                         <label id="userId-error" class="error" for="userId">User Id "{{userId}}" already exists.Please try with another user name.</label>

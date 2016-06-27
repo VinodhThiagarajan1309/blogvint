@@ -1,45 +1,46 @@
 {% extends "base.html" %}
-
 {% block content %}
- <!-- main-container -->
+<!-- main-container -->
 <div class="container main-container">
 <div class="row">
    <div class="col-md-offset-1 col-md-10">
       <article class="blogArtStyle">
-      {% if post %}
+         <!-- If Post object already exists then its EDIT operation -->
+         {% if post %}
          <form id="createEditPostForm" method="post" action="/editpost/{{post.key().id()}}">
-      {% else %}
+         <!-- Else its create Post form -->
+         {% else %}
          <form id="createEditPostForm" method="post" action="/createpost">
-      {% endif%}
+         {% endif%}
             <div class="form-group">
                <label for="title">Post Title</label>
                {% if post %}
                <input type="text" class="form-control" id="title" name="title" placeholder="Blog Title" value="{{post.title}}">
-                {% else %}
-                <input type="text" class="form-control" id="title" name="title" placeholder="Blog Title">
-                 {% endif %}
+               {% else %}
+               <input type="text" class="form-control" id="title" name="title" placeholder="Blog Title">
+               {% endif %}
             </div>
             <div class="form-group">
                <label for="content">Content</label>
                {% if post %}
-               <textarea class="form-control" rows="15" id="comment" name="content">{{post.content}}</textarea>
+               <textarea class="form-control" rows="15" id="content" name="content">{{post.content}}</textarea>
                {% else %}
-               <textarea class="form-control" rows="15" id="comment" name="content"></textarea>
+               <textarea class="form-control" rows="15" id="content" name="content"></textarea>
                {% endif %}
             </div>
+            <!-- If Post Object exist then its an Update -->
             {% if post %}
             <button type="submit" class="btn btn-success"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Update Post</button>
             <a type="submit" class="btn btn-default" href="/viewpost/{{post.key().id()}}"><i class="fa fa-ban" aria-hidden="true"></i></i> Cancel</a>
+            <!-- Else its a Post -->
             {% else %}
             <button type="submit" class="btn btn-success"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Post to Blog</button>
             <a type="submit" class="btn btn-default" href="/home"><i class="fa fa-ban" aria-hidden="true"></i></i> Cancel</a>
             {% endif %}
-            
          </form>
       </article>
    </div>
    <!-- row -->
 </div>
 <!-- main-container -->
-
 {% endblock %}

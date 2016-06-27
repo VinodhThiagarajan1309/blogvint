@@ -14,15 +14,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import webapp2
 import logging
 from routes import route_list
 
+
 def handle_404(request, response, exception):
     logging.exception(exception)
-    response.write('Oops! I could swear this page was here!')
+    response.write(
+        'You have landed in this page because you have ' +
+        'tried to lookup a link that does not exist.' +
+        '<html><a href="http://blogvint.appspot.com/">' +
+        'Go Back to Blog 0440</a></html>')
     response.set_status(404)
+
 
 def handle_500(request, response, exception):
     logging.exception(exception)

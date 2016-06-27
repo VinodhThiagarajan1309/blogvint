@@ -1,6 +1,5 @@
 import webapp2
 import os
-import webapp2
 import jinja2
 import re
 import hashlib

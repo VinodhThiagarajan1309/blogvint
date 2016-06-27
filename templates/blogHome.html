@@ -2,6 +2,7 @@
 
 {% block content %}
       <!-- main-container -->
+      <!-- If Posts are present -->
       {% if listAllPosts.count() > 0 %}
       {% for post in listAllPosts %}
       <div class="container main-container">
@@ -12,6 +13,7 @@
                   <hr class="blogItemHR">
                   <br>
                   <p>
+                  <!-- Show only first 200 characters -->
                   {{post.content|truncate(200, True , end = '...')}}
                   </p>
                   <br>
@@ -23,6 +25,7 @@
          </div> <!-- row -->
       </div> <!-- main-container --> 
    {% endfor %}
+   <!-- Else Show the Option to create post -->
    {% else %}
    <div class="container main-container">
          <div class="row">

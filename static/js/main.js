@@ -1,21 +1,7 @@
-// Work around for fixing the collapsible menu not closing after selecting the list item ( courtesy:Stack Over Flow)
-/* $(document).on('click', function(event){
-      var $clickedOn = $(event.target),
-          $collapsableItems = $('.collapse'),
-          isToggleButton = ($clickedOn.closest('.navbar-toggle').length == 1),
-          isLink = ($clickedOn.closest('a').length == 1),
-          isOutsideNavbar = ($clickedOn.parents('.navbar').length === 0);
-
-      if( (!isToggleButton && isLink) || isOutsideNavbar ) {
-        $collapsableItems.each(function(){
-          $(this).collapse('hide');
-        });
-      }
-    });*/
-
-$().ready(function() {
+$(document).ready(function() {
+    /*When Submitting the Registration Form this 
+    validations kick in*/
     $("#registrationForm").validate({
-
         rules: {
             firstName: {
                 required: true,
@@ -31,7 +17,6 @@ $().ready(function() {
                 maxlength: 15,
                 alphanumeric: true
             },
-
             password: {
                 required: true,
                 minlength: 6,
@@ -39,7 +24,6 @@ $().ready(function() {
                 alphanumeric: true,
                 notEqualTo: "#userId"
             },
-
             confirmPassword: {
                 required: true,
                 minlength: 6,
@@ -47,15 +31,12 @@ $().ready(function() {
                 alphanumeric: true,
                 equalTo: "#password"
             },
-
             email: {
                 required: false,
                 email: true,
                 maxlength: 50
             }
-
         },
-
         messages: {
             firstName: {
                 required: "Please enter the First name.",
@@ -85,20 +66,19 @@ $().ready(function() {
             email: {
                 email: "Please enter a valid e-mail id.",
                 maxlength: "Email id must be not more than 50 characters."
-
             }
 
         }
 
     });
 
+    /* When Login action submitted this validation kicks in*/
     $("#loginForm").validate({
 
         rules: {
             inputUserId: {
                 required: true
             },
-
             inputPassword: {
                 required: true
             }
@@ -115,13 +95,13 @@ $().ready(function() {
 
     });
 
+    /*While Posting and Editing the POST this validation kicks in */
     $("#createEditPostForm").validate({
         rules: {
             title: {
                 required: true,
                 maxlength: 50
             },
-
             content: {
                 required: true
             }
@@ -139,12 +119,13 @@ $().ready(function() {
 
     });
 
+    /* While commenting and editing the comment*/
     $("#postCommentForm").validate({
 
         rules: {
             comment: {
                 required: true,
-                cannotbeempty : true
+                cannotbeempty: true
             }
         },
         messages: {
@@ -153,51 +134,53 @@ $().ready(function() {
             }
         }
 
-    })
+    });
 
-    $('.editComment').click(function(){
+    /*When editing the comment*/
+    $(".editComment").click(function() {
         var elementId = this.id;
-        var currComment = $('#'+elementId+'Comment').text();
-        $('#comment').text(currComment);
-        $('#postCommentModalTitle').text("Update Comment");
-        $('#postCommentButtonName').text("Update");
-        $('#editcommentId').val(elementId);
+        var currComment = $("#" + elementId + "Comment").text();
+        $("#comment").text(currComment);
+        $("#postCommentModalTitle").text("Update Comment");
+        $("#postCommentButtonName").text("Update");
+        $("#editcommentId").val(elementId);
     });
 
-    $('.deleteComment').click(function(){
+    /*When deleting the comment*/
+    $(".deleteComment").click(function() {
         var elementId = this.id;
-        $('#deletecommentId').val(elementId);
+        $("#deletecommentId").val(elementId);
     });
 
-    if($('.viewpostDiv').length > 0){
-        $( window ).load(function() {
-        if (window.location.href.indexOf('reload')==-1) {
-             window.location.replace(window.location.href+'?reload');
-        }
-    });
+    /*To overcome eventual consistency with GAE*/
+    if ($(".viewpostDiv").length > 0) {
+        $(window).load(function() {
+            if (window.location.href.indexOf("reload") == -1) {
+                window.location.replace(window.location.href + "?reload");
+            }
+        });
     }
 
-
-    $("#likeBtn").click(function(event){
-        var isPostAuthor = $('#isPostAuthor').val();
-        var hasLikedPostAlready =  $('#hasLikedPostAlready').val();
-        if(isPostAuthor === "True"){
+    /* If the like button is clicked */
+    $("#likeBtn").click(function(event) {
+        var isPostAuthor = $("#isPostAuthor").val();
+        var hasLikedPostAlready = $("#hasLikedPostAlready").val();
+        // If user is the author
+        if (isPostAuthor === "True") {
             $("#likeErrors").fadeIn(1000);
             $("#likeErrors").text("You cannot 'LIKE' your own posts.");
-            $("#likeErrors").css("display","block");
+            $("#likeErrors").css("display", "block");
             $("#likeErrors").fadeOut(2000);
             event.preventDefault();
         }
-
-        if(hasLikedPostAlready !== "0"){
+        // If user already liked it
+        if (hasLikedPostAlready !== "0") {
             $("#likeErrors").fadeIn(1000);
             $("#likeErrors").text("You have 'LIKED' this post already.");
-            $("#likeErrors").css("display","block");
+            $("#likeErrors").css("display", "block");
             $("#likeErrors").fadeOut(2000);
             event.preventDefault();
         }
-
-        
     });
 });
 
@@ -211,9 +194,9 @@ $.validator.addMethod("lettersonly", function(value, element) {
 }, "Letters only please");
 
 $.validator.addMethod("cannotbeempty", function(value, element) {
-    if(value.trim() === ""){
+    if (value.trim() === "") {
         return false;
-    }else{
+    } else {
         return true;
     }
 }, "Comments cannot be empty.Please provide the comments.");
