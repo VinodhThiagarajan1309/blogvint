@@ -4,14 +4,18 @@
 
   You will be needing the following tools,
   
-  * Chrome Browser - To render the output
+  * Google App Engine for Python SDK
+  * Python 2.7 and above
+  * Jinja 2 for template Generation
   * Sublime Text 3
+  * Chrome Browser - To render the output
   * Chrome Developer Tools
   * https://validator.w3.org/ - To validate your HTML
   * https://jigsaw.w3.org/css-validator/validator - To Validate your CSS
   * http://jshint.com/ - To validate your javascript files
+  * http://pep8online.com/checkresult - To Validate your Python files
   
-## How to build a page like this - [Click Here](http://vinodhthiagarajan1309.github.io/)
+## How to build a page like this - [Click Here](http://blogvint.appspot.com/)
 
   * For creating HTML you will be needing snippets which will be taking slice of time , so this site. I decided to work
   Bootstrap CSS framework for this project. Try out this page [http://www.initializr.com/](http://www.initializr.com/).
@@ -32,17 +36,33 @@
   * [Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) - You will need them for giving responsiveness for your screen
   * [Pixabay](www.pixabay.com) - for great royalty free images
   * [http://postimg.org/](http://postimg.org/) - If you want to keep refer images from a remote repository
+
+## To Run this app
+
+  * [Download or Fork the following Repository](https://github.com/VinodhThiagarajan1309/blogvint/)
+  * [Create a project in your Google Developer Console](https://console.developers.google.com)
+  * It should either match the project name or alter the [app.yaml's](https://raw.githubusercontent.com/VinodhThiagarajan1309/blogvint/master/app.yaml) first line with your app's name
+ 
   
 ## Screen Shots
 
-  # Browser View
+  # Login Screen
   
-  ![](http://s20.postimg.org/4psd67dvx/Browser_View.png)
+  ![](https://s20.postimg.org/qrjkizw99/login_screen.jpg)
   
-  # Mobile View
+  # Home Screen
   
-  ![](http://s20.postimg.org/ch934ri19/Mobile_View.png)
-
-## Future Use cases
-
-  * Will be adding Udacity projects and should make the page read projects dynamically from a JSON file
+  ![](https://s20.postimg.org/b3idc7gnh/blog_home_screen.jpg)
+  
+  # View Post Screen
+  
+  ![](https://s20.postimg.org/fui8u89hp/view_post_screen.jpg)
+  
+  # Post Comment Screen
+  
+  ![](https://s20.postimg.org/ee6qc36kt/post_comment_screen.jpg)
+  
+  # Delete Post Modal
+  
+  ![](https://s20.postimg.org/664sr3eod/delete_post_screen.jpg)
+  
