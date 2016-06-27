@@ -43,26 +43,25 @@
   * [Create a project in your Google Developer Console](https://console.developers.google.com)
   * It should either match the project name or alter the [app.yaml's](https://raw.githubusercontent.com/VinodhThiagarajan1309/blogvint/master/app.yaml) first line with your app's name
  
-  
 ## Screen Shots
 
-  # Login Screen
+    # Login Screen
   
   ![](https://s20.postimg.org/qrjkizw99/login_screen.jpg)
   
-  # Home Screen
+    # Home Screen
   
   ![](https://s20.postimg.org/b3idc7gnh/blog_home_screen.jpg)
   
-  # View Post Screen
+    # View Post Screen
   
   ![](https://s20.postimg.org/fui8u89hp/view_post_screen.jpg)
   
-  # Post Comment Screen
+    # Post Comment Screen
   
   ![](https://s20.postimg.org/ee6qc36kt/post_comment_screen.jpg)
   
-  # Delete Post Modal
+    # Delete Post Modal
   
   ![](https://s20.postimg.org/664sr3eod/delete_post_screen.jpg)
   
