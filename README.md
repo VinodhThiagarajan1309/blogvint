@@ -1,4 +1,13 @@
-### MyPortfolio
+
+## Blog 0440
+
+    This is a simple blog that has the following functionalities built using 
+    Google App Engine and Python with Jinja2
+      * Register Users
+      * User Login
+      * Create - Edit - Delete - Like Posts
+      * Create - Edit - Delete Comments
+      
 
 ##Getting Started
 
@@ -14,7 +23,13 @@
   * https://jigsaw.w3.org/css-validator/validator - To Validate your CSS
   * http://jshint.com/ - To validate your javascript files
   * http://pep8online.com/checkresult - To Validate your Python files
-  
+
+## To Run this app
+
+  * [Download or Fork the following Repository](https://github.com/VinodhThiagarajan1309/blogvint/)
+  * [Create a project in your Google Developer Console](https://console.developers.google.com)
+  * It should either match the project name or alter the [app.yaml's](https://raw.githubusercontent.com/VinodhThiagarajan1309/blogvint/master/app.yaml) first line with your app's name
+ 
 ## How to build a page like this - [Click Here](http://blogvint.appspot.com/)
 
   * For creating HTML you will be needing snippets which will be taking slice of time , so this site. I decided to work
@@ -37,12 +52,7 @@
   * [Pixabay](www.pixabay.com) - for great royalty free images
   * [http://postimg.org/](http://postimg.org/) - If you want to keep refer images from a remote repository
 
-## To Run this app
 
-  * [Download or Fork the following Repository](https://github.com/VinodhThiagarajan1309/blogvint/)
-  * [Create a project in your Google Developer Console](https://console.developers.google.com)
-  * It should either match the project name or alter the [app.yaml's](https://raw.githubusercontent.com/VinodhThiagarajan1309/blogvint/master/app.yaml) first line with your app's name
- 
 ## Screen Shots
 
     # Login Screen
