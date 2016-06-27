@@ -24,6 +24,7 @@
   * http://jshint.com/ - To validate your javascript files
   * http://pep8online.com/checkresult - To Validate your Python files
   * [Jquery Validator Plugin - Just the Best !!](https://jqueryvalidation.org/)
+  * [Standard Simple Folder Structure for a Google App Engine - Python Project ](https://github.com/droot/gae-boilerplate)
 
 ## To Run this app
 
