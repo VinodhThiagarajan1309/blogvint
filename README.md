@@ -23,6 +23,7 @@
   * https://jigsaw.w3.org/css-validator/validator - To Validate your CSS
   * http://jshint.com/ - To validate your javascript files
   * http://pep8online.com/checkresult - To Validate your Python files
+  * [Jquery Validator Plugin - Just the Best !!](https://jqueryvalidation.org/)
 
 ## To Run this app
 
