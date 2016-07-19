@@ -6,7 +6,7 @@
       * Register Users
       * User Login
       * Create - Edit - Delete - Like Posts
-      * Create - Edit - Delete Comments
+      * Create - Edit - Delete Comments 
       
 
 ##Getting Started
