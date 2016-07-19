@@ -17,6 +17,9 @@ handlers:
 
 - url: /img
   static_dir: static/img
+  
+- url: /pdf
+  static_dir: static/pdfs
 
 - url: .*
   script: main.app
